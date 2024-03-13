@@ -1,10 +1,18 @@
 <script lang="ts">
   import { media } from "$lib/api";
 import type { MovieListResult } from "$lib/types";
+  import type { View } from "$lib/views";
 
     export let movies: MovieListResult[];
+    export let view: View; 
+    export let href: string; 
 
 </script>
+
+<h2 class='column'>
+    {view.title}
+    {#if href}<a {href}>see all</a>{/if}
+</h2>
 
 <div class='carousel'>
     {#each movies as movie}
@@ -19,7 +27,6 @@ import type { MovieListResult } from "$lib/types";
 
 <style>
     .carousel {
-        --padding: max(var(--side), calc(var(--side) + (100vw - var(--column))/2));
         display: flex;
         height: 12rem;
         gap: 1rem; 
