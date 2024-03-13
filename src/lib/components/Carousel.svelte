@@ -27,16 +27,13 @@ import type { MovieListResult } from "$lib/types";
 
 <style>
 .carousel {
-		--padding: max(var(--side), calc(var(--side) + (100vw - var(--column)) / 2));
 		display: flex;
-		height: clamp(10rem, 25vw, 20rem);
+		height: 15rem;
 		overflow-x: auto;
 		overflow-y: hidden;
 		white-space: nowrap;
 		overscroll-behavior-x: contain;
 		scroll-snap-type: x mandatory;
-		scroll-padding-left: var(--padding);
-		padding: 0 var(--padding);
 		gap: 1rem;
 	}
 
@@ -46,12 +43,12 @@ import type { MovieListResult } from "$lib/types";
 
 	h2 {
 		font-size: 2.4rem;
-		padding: 0 var(--side);
 		margin-top: 4rem;
 	}
 
 	h2 a {
-		color: var(--accent);
+		padding-left: 0.7rem;
+		color: rgb(151, 21, 21);
 		font-size: 1.6rem;
 	}
 

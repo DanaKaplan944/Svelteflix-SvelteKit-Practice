@@ -67,7 +67,6 @@ import type { MovieListResult } from "$lib/types";
 <style>
    .viewport {
     overflow-y: auto;
-    height: 500px;
 
    }
 

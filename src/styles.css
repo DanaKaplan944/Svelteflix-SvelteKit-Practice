@@ -9,12 +9,11 @@ body {
 }
 
 html {
-  --accent: hsl(1, 59% 50%);
-  --column: 60rem;
-  --side: 1rem;
+  width: 85%;
+  margin-left: 7rem;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background: radial-gradient(circle at 50% 0%, hsl(0, 0%, 8%), hsl(0, 0%, 2%));
+  background: black;
   background-attachment: fixed;
   background-size: 100vw 100vh;
   color: #ccc;
@@ -23,12 +22,17 @@ html {
 body {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  margin: 0;
 }
 
 .column {
-  padding-left: var(--side);
-  padding-right: var(--side);
   margin-left: auto;
   margin-right: auto;
-  max-width: var(--column);
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

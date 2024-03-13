@@ -1,4 +1,5 @@
 <script>
+    import { page } from '$app/stores'
     import '../styles.css'
     import logo from '$lib/images/logo.svg'
     import tmbd from '$lib/images/tmdb.svg'
@@ -8,37 +9,26 @@
     <a href="/"> 
      <img alt='SvelteFlix' src={logo}/>
     </a>
-    
-    <div class='links'>
-        <a href="/search">Search</a>
-        <a href="/watchlist">Watchlist</a>
-        <a href="/login">Log In</a>
-    </div>
 </nav>
 
-<main>
+<main class:infinite={$page.data.infinite}>
     <slot>
     
     </slot>
 </main>
 
 <footer>
-    <p> Data Provided By</p>
-    <a href="https://developer.themoviedb.org/docs/getting-started">
-        <img class='tmbdLogo' alt='tmbd' src={tmbd}/>
-    </a>
+	<p>
+		Data provided by <a href="https://www.themoviedb.org/"><img alt="The Movie DB" src={tmbd} /></a>
+	</p>
 </footer>
 
 <style>
     nav {
         display: flex;
         width: 100%;
-        height: 3rem;
+        height: 5rem;
         align-items: center;
-        justify-content: space-between;
-        max-width: var(--column);
-        padding: 0 var(--side);
-        color: var(--accent)
     }
 
     a {
@@ -47,13 +37,10 @@
     }
 
     img {
-        height: 1rem;
+        height: 2rem;
+        padding-top: 1rem; 
     }
 
-    .links {
-        display: flex;
-        gap: 1rem;
-    }
 
     footer {
         display: flex;
@@ -61,7 +48,11 @@
         height: 5rem;
     }
 
-    .tmbdLogo {
-        
+    main.infinite {
+        height: 0;
+        flex: 1;
+        overflow: hidden;
     }
+
+    
 </style>
