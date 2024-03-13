@@ -26,25 +26,42 @@ import type { MovieListResult } from "$lib/types";
 </div>
 
 <style>
-    .carousel {
-        display: flex;
-        height: 12rem;
-        gap: 1rem; 
-        overflow-x: scroll;
-        scroll-snap-type: mandatory;
-        scroll-padding-left: var(--padding);
-        padding: 0 var(--padding);
-    }
+.carousel {
+		--padding: max(var(--side), calc(var(--side) + (100vw - var(--column)) / 2));
+		display: flex;
+		height: clamp(10rem, 25vw, 20rem);
+		overflow-x: auto;
+		overflow-y: hidden;
+		white-space: nowrap;
+		overscroll-behavior-x: contain;
+		scroll-snap-type: x mandatory;
+		scroll-padding-left: var(--padding);
+		padding: 0 var(--padding);
+		gap: 1rem;
+	}
 
-    .carousel::-webkit-scrollbar {
-        display: none;
-    }
+	.carousel::-webkit-scrollbar {
+		display: none;
+	}
 
-    a {
-        height: 100%;
-    }
+	h2 {
+		font-size: 2.4rem;
+		padding: 0 var(--side);
+		margin-top: 4rem;
+	}
 
-    img {
-        height: 100%;
-    }
+	h2 a {
+		color: var(--accent);
+		font-size: 1.6rem;
+	}
+
+	a {
+		scroll-snap-align: start;
+		height: 100%;
+		aspect-ratio: 2 / 3;
+	}
+
+	img {
+		width: 100%;
+	}
 </style>

@@ -26,8 +26,9 @@ body {
 }
 
 .column {
-  width: car(--column);
+  padding-left: var(--side);
+  padding-right: var(--side);
   margin-left: auto;
   margin-right: auto;
-  padding: 0 var(--side);
+  max-width: var(--column);
 }
