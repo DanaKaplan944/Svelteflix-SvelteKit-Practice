@@ -25,7 +25,7 @@
 <footer>
     <p> Data Provided By</p>
     <a href="https://developer.themoviedb.org/docs/getting-started">
-        <img alt='tmbd' src={tmbd}/>
+        <img class='tmbdLogo' alt='tmbd' src={tmbd}/>
     </a>
 </footer>
 
@@ -59,5 +59,9 @@
         display: flex;
         justify-content: center;
         height: 5rem;
+    }
+
+    .tmbdLogo {
+        
     }
 </style>
