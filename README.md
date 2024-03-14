@@ -4,4 +4,6 @@ Practicing SvelteKit by following along with Rich Harris's SvelteFlix tutorial &
 
 To do:
 - add movie information when clicked
+- search functionality 
 - log in/cookie/session features
+  
